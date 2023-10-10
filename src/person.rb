@@ -2,11 +2,15 @@ class Person
   attr_reader :id
   attr_accessor :name, :age
 
-  def initialize(id, age, name: 'Unknown', parent_permission: true)
-    @id = id
+  def initialize(age, name: 'Unknown', parent_permission: true)
+    @id = generate_random_id
     @name = name
     @age = age
     @parent_permission = parent_permission
+  end
+
+  def generate_random_id
+    rand(1000..9999) # Generates a random 4-digit ID
   end
 
   def can_use_services?
