@@ -1,3 +1,5 @@
+require_relative 'base-decorator'
+
 class TrimmerDecorator < BaseDecorator
   def correct_name
     name = @nameable.correct_name
