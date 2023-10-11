@@ -12,4 +12,20 @@ class Student < Person
   def play_hooky
     '¯\\(ツ)/¯'
   end
+
+  def classroom=(new_classroom)
+    @classroom = new_classroom
+    add_to_classroom
+  end
+
+  private
+
+  def add_to_classroom
+    return if @classroom == 'Unknown'
+    @classroom.add_student(self) if @classroom.is_a?(Classroom)
+  end
+
+  def of_age?
+    @age >= 18
+  end
 end
