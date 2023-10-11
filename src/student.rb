@@ -7,21 +7,18 @@ class Student < Person
     super(id, age, name: name, parent_permission: parent_permission)
     @classroom = classroom
     @courses = []
+    add_to_classroom
   end
 
   def play_hooky
     '¯\\(ツ)/¯'
   end
 
-  def classroom=(new_classroom)
-    @classroom = new_classroom
-    add_to_classroom
-  end
-
   private
 
   def add_to_classroom
     return if @classroom == 'Unknown'
+
     @classroom.add_student(self) if @classroom.is_a?(Classroom)
   end
 

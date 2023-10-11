@@ -15,10 +15,9 @@ class Person < Nameable
     @parent_permission = parent_permission
     @rentals = []
   end
-  
+
   def add_rental(date, person)
-    rental = Rental.new(date, self, person)
-    rental
+    Rental.new(date, self, person)
   end
 
   def correct_name
