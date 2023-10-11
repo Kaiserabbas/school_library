@@ -49,7 +49,7 @@ Ruby, Visual Studia Code, WSL
 
 ### Key Features <a name="key-features"></a>
 
-- **[Morse Code Decoder]**
+- **[School Library]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,7 +79,7 @@ bundle install
 To use, run:
 
 ```
-ruby morse_code_decoder.rb
+ruby person.rb
 ```
 ## 👥 Authors <a name="authors"></a>
 
@@ -87,7 +87,7 @@ ruby morse_code_decoder.rb
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Morse Code Decoder App]**
+- [ ] **[School Library App]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
