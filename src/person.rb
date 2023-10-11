@@ -1,4 +1,6 @@
-class Person
+require 'Nameable'
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
@@ -8,7 +10,11 @@ class Person
     @age = age
     @parent_permission = parent_permission
   end
-
+  
+  def correct_name
+    name
+  end
+  
   def generate_random_id
     rand(1000..9999) # Generates a random 4-digit ID
   end
