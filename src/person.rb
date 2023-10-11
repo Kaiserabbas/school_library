@@ -13,10 +13,16 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
+  end
+  
+  def add_rental(date, person)
+    rental = Rental.new(date, self, person)
+    rental
   end
 
   def correct_name
-    name
+    @name
   end
 
   def generate_random_id
