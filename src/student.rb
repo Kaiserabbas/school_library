@@ -3,8 +3,8 @@ require_relative 'person'
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(id, age, name: 'Unknown', parent_permission: true, classroom: 'Unknown')
-    super(id, age, name: name, parent_permission: parent_permission)
+  def initialize(age, name: 'Unknown', parent_permission: true, classroom: 'Unknown')
+    super(age, name: name, parent_permission: parent_permission)
     @classroom = classroom
     @courses = []
     add_to_classroom
@@ -19,7 +19,7 @@ class Student < Person
   def add_to_classroom
     return if @classroom == 'Unknown'
 
-    @classroom.add_student(self) if @classroom.is_a?(Classroom)
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 
   def of_age?
