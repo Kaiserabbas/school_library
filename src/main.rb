@@ -23,7 +23,7 @@ def switch(get)
   when 5
     APP.create_rental
   when 6
-    APP.list_rentals
+    APP.list_rentals_for_person
   end
 end
 
