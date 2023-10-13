@@ -13,30 +13,6 @@ class App
     @people = []
     @books = []
     @rentals = []
-    create_initial_data
-  end
-
-  # Create some initial data
-  def create_initial_data
-    # Create students
-    student1 = Student.new(15, name: 'John', parent_permission: true)
-    student2 = Student.new(16, name: 'Alice', parent_permission: true)
-
-    # Create a teacher
-    teacher1 = Teacher.new(35, name: 'Mr. Smith', specialization: 'Math')
-
-    # Create books
-    book1 = Book.new('Introduction to Ruby', 'John Rubyist')
-    book2 = Book.new('Ruby on Rails Guide', 'Ruby Rails')
-
-    # Create rentals
-    rental1 = Rental.new('2023-10-12', book1, student1)
-    rental2 = Rental.new('2023-10-10', book2, student2)
-
-    # Add the created objects to your data
-    @people.push(student1, student2, teacher1)
-    @books.push(book1, book2)
-    @rentals.push(rental1, rental2)
   end
 
   # List of books...
