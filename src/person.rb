@@ -15,10 +15,10 @@ class Person < Nameable
     @parent_permission = parent_permission
     @rentals = []
   end
-  
-    def generate_random_id
-      rand(1000..9999) 
-    end
+
+  def generate_random_id
+    rand(1000..9999)
+  end
 
   def add_rental(date, book)
     Rental.new(date, self, book)
