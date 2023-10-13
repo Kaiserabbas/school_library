@@ -15,19 +15,17 @@ class Person < Nameable
     @parent_permission = parent_permission
     @rentals = []
   end
+  
+    def generate_random_id
+      rand(1000..9999) 
+    end
 
   def add_rental(date, book)
     Rental.new(date, self, book)
-    @rentals << rental
-    rental
   end
 
   def correct_name
     @name
-  end
-
-  def generate_random_id
-    rand(1000..9999) # Generates a random 4-digit ID
   end
 
   def can_use_services?
@@ -40,10 +38,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person = Person.new(22, name: 'Maximilianus')
-person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
