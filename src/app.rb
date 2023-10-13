@@ -143,7 +143,7 @@ class App
 
     @people[person_index] if (0...@people.length).cover?(person_index)
   end
-  
+
   # List all rentals for a given person ID
   def list_rentals_for_person
     print 'Enter the ID of the person: '
@@ -152,17 +152,17 @@ class App
     person = @people.find { |p| p.id == person_id }
 
     if person
-        rentals = @rentals.select { |rental| rental.person == person }
-        if rentals.empty?
+      rentals = @rentals.select { |rental| rental.person == person }
+      if rentals.empty?
         puts 'No rentals found for this person.'
-        else
+      else
         puts 'Rentals for the selected person:'
         rentals.each do |rental|
-            puts "Date: #{rental.date}, Book: #{rental.book.title}"
+          puts "Date: #{rental.date}, Book: #{rental.book.title}"
         end
-        end
+      end
     else
-        puts 'Person not found with the given ID.'
+      puts 'Person not found with the given ID.'
     end
   end
 end
