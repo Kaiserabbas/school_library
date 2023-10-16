@@ -17,7 +17,15 @@ class App
 
   # List of books...
   def list_books
-    @books.map { |book| "Title: \"#{book.title}\", Author \"#{book.author}\"" }
+    if @books.empty?
+      puts 'No books available.'
+    else
+      puts 'List of books:'
+      @books.each do |book|
+        puts "Title: \"#{book.title}\", Author: #{book.author}"
+      end
+    end
+    puts "Total books: #{@books.length}"
   end
 
   # List of people...
