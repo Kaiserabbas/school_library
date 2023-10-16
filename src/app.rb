@@ -17,12 +17,14 @@ class App
 
   # List of books...
   def list_books
-    puts(@books.map { |book| "Title: \"#{book.title}\", Author \"#{book.author}\"" })
+    @books.map { |book| "Title: \"#{book.title}\", Author \"#{book.author}\"" }
   end
 
   # List of people...
   def list_people
-    puts(@people.map { |person| "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" })
+    @people.each do |person|
+      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
   end
 
   # Create a person...
